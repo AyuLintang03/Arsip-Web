@@ -90,7 +90,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="{{route('index_user')}}" class="dropdown-item">My Profile</a>
-                            
+                             <a href="{{route('admin.dashboard')}}" class="dropdown-item">Dashboard Admin</a>
                             <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();document.getElementById('logout-form').submit()">
                                 <span>{{ __('Logout') }}</span>
                                 <form action="{{ route('logout') }}" id="logout-form" method="post">

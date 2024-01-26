@@ -14,7 +14,7 @@ class ControllerUploadFile extends Controller
     public function create_upload()
     {
         
-         $uploads = UploadFile::where('user_id', Auth::id())->get();
+        $uploads = UploadFile::where('user_id', Auth::id())->get();
         return view('User.UploadFile.input-uploadfile',compact('uploads'));
     }
 

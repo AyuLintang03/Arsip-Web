@@ -31,7 +31,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('user/update/{user}', [ControllerUser::class, 'update_user'])->name('update_user'); 
     Route::get('users/search', [ControllerUser::class, 'searchuser'])->name('searchuser'); 
     Route::delete('users/delete/{user}', [ControllerUser::class, 'delete_user'])->name('delete_user'); 
-   
     //Route::get('/downloadfile/{id}', [ControllerDownloadFile::class, 'download'])->name('download_file');
     Route::get('/downloadfile/{id}', [ControllerDownloadFile::class, 'downloadFile'])->name('download.file');
 });

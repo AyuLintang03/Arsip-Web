@@ -19,4 +19,27 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        if ($this->attemptLogin($request)) {
+            // Update user status to "online" upon successful login
+            Auth::user()->update(['status' => 'online']);
+            return $this->sendLoginResponse($request);
+        }
+
+        return $this->sendFailedLoginResponse($request);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::user()->update(['status' => 'offline']);
+
+    $this->guard()->logout();
+    $request->session()->invalidate();
+
+    return $this->loggedOut($request) ?: redirect('/');
+    }
 }

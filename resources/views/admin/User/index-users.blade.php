@@ -125,6 +125,7 @@
                         <th scope="col">Jabatan</th>
                         <th scope="col">Nomer HP</th>
                         <th scope="col">Gambar</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -137,6 +138,7 @@
                         <td>{{$user->jabatan}}</td>
                         <td>{{$user->nohp}}</td>
                         <td>{{$user->file}}</td>
+                        <td style="color : {{ $user->status === 'online' ? 'green' : 'gray' }}">{{ $user->status === 'online' ? 'Online' : 'Offline' }}</td>
                         <td>
                             <div class="btn-group" role="group">
                                  <form id="deleteForm_{{ $user->id }}" action="{{ route('admin.delete_user', $user->id) }}" method="post">

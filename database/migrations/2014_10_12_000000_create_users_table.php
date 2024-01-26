@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('jabatan')->nullable();
             $table->string('nohp')->nullable();
+            $table->string('status')->default('offline');
             $table->boolean('is_admin')->default(false);
             $table->rememberToken();
             $table->timestamps();

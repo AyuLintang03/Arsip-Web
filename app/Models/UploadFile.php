@@ -15,15 +15,12 @@ class UploadFile extends Model
         'user_id'
     ];
 
-    
-public function jenis_file(){
-        return $this->belongsTo(JenisFile::class);
-    }
-    
+  
 public function download_file(){
         return $this->hasMany(DownloadFile::class);
     }
     public function UploadFile(){
         return $this->belongsTo(User::class);
     }
+  
 }

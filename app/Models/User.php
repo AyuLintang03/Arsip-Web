@@ -24,6 +24,7 @@ class User extends Authenticatable
         'jabatan',
         'nohp',
         'image',
+        'status',
         'is_admin',
     ];
 
@@ -46,7 +47,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-     public function UploadFile(){
-        return $this->hasMany(UploadFile::class);
+    public function uploadedFile()
+    {
+        return $this->hasOne(UploadFile::class); 
     }
 }
